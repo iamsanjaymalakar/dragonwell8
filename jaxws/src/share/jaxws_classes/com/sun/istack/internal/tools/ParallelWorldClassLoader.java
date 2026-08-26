@@ -205,11 +205,11 @@ public class ParallelWorldClassLoader extends ClassLoader implements Closeable {
                 if (ioe == null) {
                     ioe = e;
                 } else {
-                    ioe.ddSuppressed(e);
+                    ioe.addSuppressed(e);
                 }
             }
         }
-        if (ioe != null) return ioe;
+        if (ioe != null) throw ioe;
     }
 
     /**
